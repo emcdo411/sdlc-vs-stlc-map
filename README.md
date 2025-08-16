@@ -144,3 +144,72 @@ gantt
   * “STLC isn’t a phase; it’s the embedded quality discipline across SDLC. Shift‑left + monitor‑right.”
 
 > Tip: Pair Diagram 1 (flow of work) with Diagram 2 (time overlap) to drive home *both* structure and chronology.
+
+---
+
+## Diagram 3 — Hotel Analogy Workflow (Three-Column Map)
+
+```mermaid
+flowchart LR
+  %% Columns
+  subgraph COL1 [Hotel Stage]
+    direction TB
+    H1[Concept & Codes]
+    H2[Blueprints]
+    H3[Build & Connect]
+    H4[Pre-Opening]
+    H5[Soft to Grand Opening]
+    H6[Operations & Upgrades]
+  end
+
+  subgraph COL2 [SDLC Focus]
+    direction TB
+    S1[Vision, budget,<br/>constraints]
+    S2[System architecture &<br/>integrations]
+    S3[Construction &<br/>integration]
+    S4[Launch preparation]
+    S5[Release]
+    S6[Run & evolve]
+  end
+
+  subgraph COL3 [STLC Focus]
+    direction TB
+    T1[Requirement testability,<br/>acceptance criteria,<br/>RTM, risk register]
+    T2[Test strategy,<br/>test plans/cases/scripts,<br/>test environments,<br/>synthetic data,<br/>traceability]
+    T3[Unit / Integration / System<br/>inspections, CI automation,<br/>defect triage]
+    T4[Performance, Security,<br/>Accessibility, Resilience/DR,<br/>regression &amp; fixes,<br/>RTM updates]
+    T5[UAT, feedback,<br/>go/no-go quality gate]
+    T6[Monitoring/observability,<br/>incident mgmt,<br/>regression packs,<br/>test closure reports,<br/>retros]
+  end
+
+  %% Row mapping
+  H1 --> S1
+  H1 --> T1
+  H2 --> S2
+  H2 --> T2
+  H3 --> S3
+  H3 --> T3
+  H4 --> S4
+  H4 --> T4
+  H5 --> S5
+  H5 --> T5
+  H6 --> S6
+  H6 --> T6
+
+  %% Keep columns aligned vertically
+  S1 --> S2 --> S3 --> S4 --> S5 --> S6
+  T1 --> T2 --> T3 --> T4 --> T5 --> T6
+
+  classDef default fill:#f1f5f9,stroke:#334155,stroke-width:1.2px,color:#111
+  classDef col fill:#e0f2fe,stroke:#0369a1,stroke-width:1.5px,color:#111
+  classDef sdlc fill:#dbeafe,stroke:#1d4ed8,color:#111
+  classDef stlc fill:#d9ead3,stroke:#38761d,color:#111
+
+  class COL1 col
+  class COL2 col
+  class COL3 col
+
+  class S1,S2,S3,S4,S5,S6 sdlc
+  class T1,T2,T3,T4,T5,T6 stlc
+```
+
