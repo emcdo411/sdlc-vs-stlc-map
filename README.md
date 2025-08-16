@@ -44,7 +44,7 @@
 ```mermaid
 flowchart LR
   %% SDLC backbone
-  subgraph SDLC[SDLC Lifecycle]
+  subgraph SDLC [SDLC Lifecycle]
     direction LR
     P[Concept & Requirements] --> D[Design & Architecture]
     D --> I[Construction & Integration]
@@ -54,22 +54,22 @@ flowchart LR
   end
 
   %% STLC activities mapped per phase
-  subgraph STLC[STLC Activities (Embedded per Phase)]
+  subgraph STLC [STLC Activities – Embedded per Phase]
     direction LR
-    P1[Req Testability\nAcceptance Criteria\nRTM Draft]:::stlc --> D1[Test Strategy\nTest Plans/Cases\nEnvironments & Data]:::stlc
-    D1 --> I1[Unit/Integration/System Tests\nCI Automation\nDefect Triage]:::stlc
-    I1 --> V1[Perf/Sec/Accessibility/DR\nRegression & Fix Verify\nRTM Update]:::stlc
-    V1 --> R1[UAT & Sign-off\nGo/No-Go Gate]:::stlc
-    R1 --> O1[Monitoring/Incidents\nRegression Packs\nTest Closure & Retros]:::stlc
+    P1[Req Testability<br/>Acceptance Criteria<br/>RTM Draft]:::stlc --> D1[Test Strategy<br/>Test Plans/Cases<br/>Environments &amp; Data]:::stlc
+    D1 --> I1[Unit / Integration / System Tests<br/>CI Automation<br/>Defect Triage]:::stlc
+    I1 --> V1[Performance / Security / Accessibility / DR<br/>Regression &amp; Fix Verify<br/>RTM Update]:::stlc
+    V1 --> R1[UAT &amp; Sign-off<br/>Go / No-Go Gate]:::stlc
+    R1 --> O1[Monitoring &amp; Incidents<br/>Regression Packs<br/>Test Closure &amp; Retros]:::stlc
   end
 
   %% Cross-links from SDLC phases to their STLC counterparts
-  P -.feeds.-> P1
-  D -.feeds.-> D1
-  I -.feeds.-> I1
-  V -.feeds.-> V1
-  R -.feeds.-> R1
-  O -.feeds.-> O1
+  P -.-> P1
+  D -.-> D1
+  I -.-> I1
+  V -.-> V1
+  R -.-> R1
+  O -.-> O1
 
   classDef stlc fill:#d9ead3,stroke:#38761d,stroke-width:1.5px,color:#111
   classDef default fill:#e0f2fe,stroke:#0369a1,stroke-width:1.5px,color:#111
